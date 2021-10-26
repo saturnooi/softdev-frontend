@@ -22,6 +22,11 @@ const routes = [{
         path: '/loginandregister',
         name: 'LoginAndRegister',
         component: LoginAndRegister
+    },
+    {
+        path: '/Chat',
+        name: 'Chat',
+        component: Chat
     }
 
 ]
