@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import LoginAndRegister from '../components/LoginAndRegister.vue'
-
+import LoginAndRegister from '../views/LoginAndRegister.vue'
+//import Chat from '../components/Chat.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -26,7 +26,7 @@ const routes = [{
     {
         path: '/Chat',
         name: 'Chat',
-        component: Chat
+        //component: Chat
     }
 
 ]
