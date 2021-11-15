@@ -1,7 +1,7 @@
 <template>
 <div class="chat-container">
   <header class="chat-header">
-    <h1><i class="fas fa-smile"></i> Chat</h1><a class="btn" id="leave-btn">Leave Room</a>
+    <h1><i class="fas fa-smile"></i> Chat</h1><a class="btn1" id="leave-btn">Leave Room</a>
   </header>
   <main class="chat-main">
     <div class="chat-sidebar">
@@ -14,15 +14,6 @@
 				</div>
 			</div>
 		</button>
-		<button class="users">
-			<div class="userElements">
-				<img class="pic" src="../assets/aum.jpg">
-				<div class="nameElement">
-					<span class="name">Name : Aum Kod-Hod</span>
-					<span class="Lmsg">last message...</span>
-				</div>
-			</div>
-		</button>
 	</div>
     <div class="chat-messages">
       <div class="message"></div>
@@ -30,17 +21,21 @@
 	<div class="agreement">
 		<span class="text-agree">Agreement</span>
 		<div class="agree-buts">
-			<input class="price" type="text" placeholder="Enter Price"/>
+			<span class="plsInsert">Please insert a price.</span>
+			<input class="price" type="text" placeholder="Enter Price..."/>
 			<button class="deal">Deal</button>
 			<button class="offer">Offer a new price</button>
 			<button class="complete">Task Complete</button>
 			<button class="cancel">Cancel a task</button>
+			<div class="howto">
+				
+			</div>
 		</div>
 	</div>
   </main>
   <div class="chat-form-container">
     <form id="chat-form">
-      <input class ="textbar" id="msg" type="text" placeholder="Enter Message" required="" autocomplete="off">
+      <input class ="textbar" id="msg" type="text" placeholder="Enter Message..." required="" autocomplete="off">
       <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
     </form>
   </div>
@@ -71,6 +66,34 @@ body {
 	margin: 20px;
 }
 
+.chat-sidebar::-webkit-scrollbar {
+	width: 1em
+}
+
+.chat-sidebar::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.chat-sidebar::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #667aff;
+	outline: 1px solid slategrey;
+}
+
+.chat-messages::-webkit-scrollbar {
+	width: 1em
+}
+
+.chat-messages::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #667aff;
+	outline: 1px solid slategrey;
+}
+
 ul {
 	list-style: none;
 }
@@ -79,13 +102,49 @@ a {
 	text-decoration: none;
 }
 
+
 .btn {
 	cursor: pointer;
 	padding: 5px 15px;
 	background: var(--light-color);
 	color: var(--dark-color-a);
-	border: 0;
+	border: none;
 	font-size: 17px;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: box-shadow, transform;
+	transition-property: box-shadow, transform;
+}
+
+.btn:hover, .btn:focus, .btn:active{
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.btn1 {
+	font-family: "Poppins", sans-serif;
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: none;
+	font-size: 17px;
+	border-radius: 2.5px;
+	width: 250px;
+	text-align: center;
+	position: relative;
+	right: 15px;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: box-shadow, transform;
+	transition-property: box-shadow, transform;
+}
+
+.btn1:hover, .btn1:focus, .btn1:active{
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 /* Chat Page */
@@ -121,11 +180,11 @@ a {
 	color: #fff;
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
-	width: 400px;
+	width: 390px;
 }
 
 .users {
-	width: 333px;
+	width: 320px;
 	height: 100px;
 	background: var(--light-color);
 	color: #000;
@@ -176,7 +235,7 @@ a {
 	background: var(--dark-color-b);
 	color: #fff;
 	padding: 20px 20px 60px;
-	width: 300px;
+	width: 310px;
 	text-align: center;
 }
 
@@ -190,11 +249,18 @@ a {
 .text-agree {
 	font-family: "Poppins", sans-serif;
 	font-size: 40px;
+	position: relative;
+	top: 10px;
+}
+
+.plsInsert {
+	font-family: "Poppins", sans-serif;
+	margin-top: 100px;
 }
 
 .price {
 	font-family: "Poppins", sans-serif;
-	font-size: 15px;
+	font-size: 18px;
 	border: none;
 	appearance: none;
 	background: #f2f2f2;
@@ -202,15 +268,24 @@ a {
 	border-radius: 3px;
 	width: 250px;
 	outline: none;
-	margin-top: 50px;
+	margin-top: 5px;
+	text-align: center;
+	position: relative;
+}
+
+.textbar {
+	font-family: "Poppins", sans-serif;
+	border: none;
+	border-radius: 2.5px;
+	margin-right: 10px;
 }
 
 .deal {
-	margin-top: 40px;
+	margin-top: 200px;
+	background: #1E90FF;
 	font-family: "Poppins", sans-serif;
 	font-size: 18px;
-	background: #1E90FF;
-	width: 160px;
+	width: 200px;
 	padding: 8.5px;
 	text-align: center;
 	text-decoration: none;
@@ -260,7 +335,7 @@ a {
 }
 
 .complete {
-	margin-top: 200px;
+	margin-top: 30px;
 	font-size: 18px;
 	background: #00D100;
 	width: 200px;
@@ -290,7 +365,7 @@ a {
 	font-family: "Poppins", sans-serif;
 	font-size: 18px;
 	background: #FF0000;
-	width: 160px;
+	width: 200px;
 	padding: 8.5px;
 	text-align: center;
 	text-decoration: none;
